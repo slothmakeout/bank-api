@@ -1,0 +1,9 @@
+curl -X GET http://localhost:9090/accounts | jq
+curl -X GET http://localhost:9090/accounts/4 | jq
+
+curl -X POST -H "Content-Type: application/json" -d '{"number":"101-230", "date_opened":"2024-03-27T16:18:07.094543+03:00", "balance":1280000.00, "type_id":1}' http://localhost:9090/accounts | jq
+curl -X POST -H "Content-Type: application/json" -d '{"Number":"101-230", "DateOpened":"2024-03-27T16:18:07.094543+03:00", "Balance":1280000.00, "TypeID":1}' http://localhost:9090/accounts | jq
+
+curl -X PUT -H "Content-Type: application/json" -d '{"number":"101-222", "date_opened":"2024-03-27T16:18:07.094543+03:00", "balance":1500.00, "type_id":1}' http://localhost:9090/accounts/17 | jq
+
+curl -X DELETE http://localhost:9090/accounts/{id} | jq
